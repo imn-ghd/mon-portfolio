@@ -694,3 +694,100 @@ main {
     margin-bottom: 40px;
   }
 }
+
+.technologies-section {
+  padding: 2rem;
+  width: 100%;
+}
+
+.technologies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.tech-item {
+  width: 100%;
+  max-width: 150px;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Ajustements pour mobile */
+@media screen and (max-width: 768px) {
+  .technologies-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .tech-item {
+    max-width: 100px;
+    padding: 0.5rem;
+  }
+
+  .tech-item img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tech-item p {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+}
+
+.navbar {
+  padding: 0.8rem;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Ajustements pour mobile */
+@media (max-width: 768px) {
+  .header {
+    position: relative;
+  }
+
+  .navbar {
+    padding: 0.5rem;
+  }
+
+  .nav-list {
+    gap: 0.8rem;
+    padding: 0.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+  }
+}
+
+/* Pour très petits écrans */
+@media (max-width: 480px) {
+  .nav-list {
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+  }
+}

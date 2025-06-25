@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 
 const App = () => {
     const handleDownloadCV = () => {
-        const cvUrl = `${process.env.PUBLIC_URL}/CV.pdf`;
+        const cvUrl = `${process.env.PUBLIC_URL}/CV_Imene.pdf`;
         window.open(cvUrl, '_blank');
     };
 
