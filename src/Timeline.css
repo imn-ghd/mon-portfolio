@@ -1,0 +1,115 @@
+/* Ligne centrale de la frise */
+.timeline {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #eaeaea;
+    transform: translateX(-50%);
+}
+
+/* Style des événements */
+.timeline-event {
+    position: relative;
+    width: 45%;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Alignement gauche */
+.timeline-event.left {
+    left: 0;
+}
+
+/* Alignement droite */
+.timeline-event.right {
+    left: 50%;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+/* Contenu de l'événement */
+.event-content {
+    background: #3a0e15;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 320px;
+    text-align: center;
+    z-index: 1;
+}
+
+/* Image associée à l'événement */
+.event-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #eaeaea;
+    margin: 0 1rem;
+    background: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline {
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .timeline::before {
+        left: 10%; /* Repositionne la ligne centrale pour petits écrans */
+        transform: none; /* Supprime le décalage horizontal */
+    }
+
+    .timeline-event {
+        width: 100%;
+        margin: 1rem 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .timeline-event.left,
+    .timeline-event.right {
+        left: 0;
+    }
+
+    .event-content {
+        margin: 0 0 1rem 10%;
+        max-width: 90%; /* Ajuste la largeur du contenu */
+        text-align: left; /* Aligne le texte à gauche */
+    }
+
+    .event-image img {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto; /* Centre les images */
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline::before {
+        left: 5%; /* Ajuste la position de la ligne centrale */
+    }
+
+    .event-content {
+        margin: 0 0 1rem 5%;
+        max-width: 90%; /* Réduit encore la largeur */
+    }
+
+    .event-image img {
+        width: 60px;
+        height: 60px;
+    }
+}
