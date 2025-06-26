@@ -13,7 +13,7 @@ const Contact = () => {
             icon: "💼",
             title: "LinkedIn",
             value: "Imène Ghoudane",
-            action: "https://www.linkedin.com/in/imene-ghoudane"
+            action: "https://fr.linkedin.com/in/imène-ghoudane-361b88333"
         },
         {
             icon: "📱",
