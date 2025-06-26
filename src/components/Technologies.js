@@ -2,6 +2,27 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Technologies = () => {
+    const techList = [
+        { src: "/html.png", alt: "HTML" },
+        { src: "/css.png", alt: "CSS" },
+        { src: "/vecteezy_javascript-logo-png-javascript-icon-transparent-png_27127463.png", alt: "JavaScript" },
+        { src: "/python_94570.png", alt: "Python" },
+        { src: "/php.png", alt: "PHP" },
+        { src: "/angular.png", alt: "Angular" },
+        { src: "/java.png", alt: "Java" },
+        { src: "/spring.png", alt: "Spring" },
+        { src: "/mysql.png", alt: "MySQL" },
+        { src: "/postgresql.png", alt: "PostgreSQL" },
+        { src: "/gitlab.png", alt: "GitLab" },
+        { src: "/git.png", alt: "GitHub" },
+        { src: "/docker.png", alt: "Docker" },
+        { src: "/insomnia.png", alt: "Insomnia" },
+        { src: "/vscode.png", alt: "VSCode" },
+        { src: "/ide.png", alt: "JetBrains" },
+        { src: "/kotlin.png", alt: "Kotlin" },
+        { src: "/react.png", alt: "React" }
+    ];
+
     return (
         <section id="technologies" className="section section-inverse">
             <motion.h2
@@ -14,36 +35,21 @@ const Technologies = () => {
                 Technologies
             </motion.h2>
             <motion.div
-                className="technologies-list"
+                className="technologies-grid"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.3 }}
+                transition={{ duration: 1 }}
             >
-                <div className="technologies-row">
-                    <img src={`${process.env.PUBLIC_URL}/html.png`} alt="HTML" />
-                    <img src={`${process.env.PUBLIC_URL}/css.png`} alt="CSS" />
-                    <img src={`${process.env.PUBLIC_URL}/vecteezy_javascript-logo-png-javascript-icon-transparent-png_27127463.png`} alt="JavaScript" />
-                    <img src={`${process.env.PUBLIC_URL}/python_94570.png`} alt="Python" />
-                    <img src={`${process.env.PUBLIC_URL}/php.png`} alt="PHP" />
-                    <img src={`${process.env.PUBLIC_URL}/angular.png`} alt="Angular" />
-                </div>
-                <div className="technologies-row">
-                    <img src={`${process.env.PUBLIC_URL}/java.png`} alt="Java" />
-                    <img src={`${process.env.PUBLIC_URL}/spring.png`} alt="Spring" />
-                    <img src={`${process.env.PUBLIC_URL}/mysql.png`} alt="MySQL" />
-                    <img src={`${process.env.PUBLIC_URL}/postgresql.png`} alt="PostgreSQL" />
-                    <img src={`${process.env.PUBLIC_URL}/gitlab.png`} alt="GitLab" />
-                    <img src={`${process.env.PUBLIC_URL}/git.png`} alt="GitHub" />
-                </div>
-                <div className="technologies-row">
-                    <img src={`${process.env.PUBLIC_URL}/docker.png`} alt="Docker" />
-                    <img src={`${process.env.PUBLIC_URL}/insomnia.png`} alt="Insomnia" />
-                    <img src={`${process.env.PUBLIC_URL}/vscode.png`} alt="VSCode" />
-                    <img src={`${process.env.PUBLIC_URL}/ide.png`} alt="JetBrains" />
-                    <img src={`${process.env.PUBLIC_URL}/kotlin.png`} alt="Kotlin" />
-                    <img src={`${process.env.PUBLIC_URL}/react.png`} alt="React" />
-                </div>
+                {techList.map((tech, index) => (
+                    <div key={index} className="tech-item">
+                        <img
+                            src={`${process.env.PUBLIC_URL}${tech.src}`}
+                            alt={tech.alt}
+                        />
+                        <p>{tech.alt}</p>
+                    </div>
+                ))}
             </motion.div>
         </section>
     );
